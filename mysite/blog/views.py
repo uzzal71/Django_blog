@@ -1,24 +1,9 @@
 from django.shortcuts import render
 from django.utils import timezone
-
-
-posts = [
-    {
-        'author': 'Nasir Uddin',
-        'title': 'Blog post one',
-        'content': 'First blog post content',
-        'date_posted': timezone.now()
-    },
-    {
-        'author': 'Juwel Rana',
-        'title': 'Blog post two',
-        'content': 'Second blog post content',
-        'date_posted': timezone.now()
-    }
-]
+from .models import Post
 
 def home(request):
-    context = {'posts': posts}
+    context = {'posts': Post.objects.all() }
     return render(request, 'blog/home.html', context)
 
 def about(request):
