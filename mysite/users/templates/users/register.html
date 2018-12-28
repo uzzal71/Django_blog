@@ -6,17 +6,16 @@
     <form action="" method="POST" autocomplete="off">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-button mb-4">
-                {{ form|crispy }}
-                <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Sign Up</button>
-                </div>
-            </legend>
+            <legend class="border-button mb-4">Join Today</legend>
         </fieldset>
+        {{ form|crispy }}
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
     </form>
     <div class="border-top pt-3">
         <small class="text-muted">
-            Already have an accounts? <a class="ml-3" href="">Sign In</a>
+            Already have an accounts? <a class="ml-3" href="{% url 'login' %}">Sign In</a>
         </small>
     </div>
 </div>
