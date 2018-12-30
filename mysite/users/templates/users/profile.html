@@ -10,5 +10,16 @@
         </div>
     </div>
     <!-- FORM HERE -->
+    <form action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-button mb-4">Join Today</legend>
+        </fieldset>
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update Profile</button>
+        </div>
+    </form>
 </div>
 {% endblock content %}
